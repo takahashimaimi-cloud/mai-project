@@ -230,17 +230,17 @@ body {
 
 .cat-runner {
   position: absolute;
-  bottom: 8px;
-  right: -120px;
-  animation: catRun 9s linear infinite;
+  bottom: 12px;
+  right: -60px;
+  font-size: 40px;
+  animation: catRun 7s linear infinite;
+  transform: scaleX(-1);
 }
 
 @keyframes catRun {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(calc(-100vw - 140px)); }
+  0%   { right: -60px; }
+  100% { right: 110%; }
 }
-
-.cat-svg { display: block; }
 
 /* ── Responsive */
 @media (max-width: 600px) {

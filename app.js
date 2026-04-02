@@ -139,30 +139,3 @@ $('cityInput').addEventListener('keydown', (e) => {
 
 // Initial load
 load('Tokyo');
-
-// ── Cat leg animation ───────────────────────────────────────────────────
-(function animateCat() {
-  const frames = [
-    // pose A: legs spread
-    { leg1: [36,49,30,60], leg2: [43,50,49,60], leg3: [52,49,46,60], leg4: [58,50,64,60] },
-    // pose B: legs crossed
-    { leg1: [36,49,42,60], leg2: [43,50,37,60], leg3: [52,49,58,60], leg4: [58,50,52,60] },
-  ];
-  let f = 0;
-  const legs = ['leg1','leg2','leg3','leg4'];
-
-  function setFrame(pose) {
-    legs.forEach((id, i) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const [x1,y1,x2,y2] = pose['leg'+(i+1)];
-      el.setAttribute('x1', x1); el.setAttribute('y1', y1);
-      el.setAttribute('x2', x2); el.setAttribute('y2', y2);
-    });
-  }
-
-  setInterval(() => {
-    f = (f + 1) % frames.length;
-    setFrame(frames[f]);
-  }, 180);
-})();
