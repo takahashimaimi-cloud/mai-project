@@ -231,15 +231,14 @@ body {
 .cat-runner {
   position: absolute;
   bottom: 12px;
-  right: -60px;
+  left: 100%;
   font-size: 40px;
   animation: catRun 7s linear infinite;
-  transform: scaleX(-1);
 }
 
 @keyframes catRun {
-  0%   { right: -60px; }
-  100% { right: 110%; }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-100vw - 80px)); }
 }
 
 /* ── Responsive */
