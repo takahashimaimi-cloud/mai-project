@@ -87,8 +87,44 @@
 
   <!-- Bengal cat running animation -->
   <div class="cat-stage" aria-hidden="true">
-    <div class="cat-runner" id="catRunner">
-      <div class="cat-sprite"></div>
+    <div class="cat-runner">
+      <svg class="cat-svg" viewBox="0 0 100 60" width="100" height="60" xmlns="http://www.w3.org/2000/svg">
+        <!-- tail -->
+        <path class="cat-tail" d="M18 38 Q4 22 8 10" stroke="#c8a96e" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <!-- body -->
+        <ellipse cx="46" cy="38" rx="26" ry="13" fill="#c8a96e"/>
+        <!-- bengal spots -->
+        <ellipse cx="38" cy="34" rx="5" ry="3.5" fill="#7a4e1a" opacity=".5" transform="rotate(-15 38 34)"/>
+        <ellipse cx="52" cy="30" rx="4" ry="2.5" fill="#7a4e1a" opacity=".45" transform="rotate(10 52 30)"/>
+        <ellipse cx="58" cy="40" rx="4" ry="3" fill="#7a4e1a" opacity=".45" transform="rotate(-5 58 40)"/>
+        <!-- head -->
+        <circle cx="70" cy="29" r="14" fill="#c8a96e"/>
+        <!-- ear left -->
+        <polygon points="62,20 65,8 72,19" fill="#c8a96e"/>
+        <polygon points="63,19 65,11 71,19" fill="#f4b8b8" opacity=".7"/>
+        <!-- ear right -->
+        <polygon points="74,19 78,8 84,20" fill="#c8a96e"/>
+        <polygon points="75,19 78,11 83,20" fill="#f4b8b8" opacity=".7"/>
+        <!-- head spot -->
+        <ellipse cx="70" cy="25" rx="5" ry="3" fill="#7a4e1a" opacity=".35" transform="rotate(5 70 25)"/>
+        <!-- eyes -->
+        <circle cx="65" cy="27" r="3.2" fill="#1a1a1a"/>
+        <circle cx="75" cy="27" r="3.2" fill="#1a1a1a"/>
+        <circle cx="65.9" cy="26.2" r="1.1" fill="white"/>
+        <circle cx="75.9" cy="26.2" r="1.1" fill="white"/>
+        <!-- nose -->
+        <path d="M69 32 L71 32 L70 34 Z" fill="#e08080"/>
+        <!-- whiskers -->
+        <line x1="56" y1="31" x2="65" y2="31" stroke="#aaa" stroke-width=".8"/>
+        <line x1="56" y1="33" x2="65" y2="33" stroke="#aaa" stroke-width=".8"/>
+        <line x1="75" y1="31" x2="84" y2="31" stroke="#aaa" stroke-width=".8"/>
+        <line x1="75" y1="33" x2="84" y2="33" stroke="#aaa" stroke-width=".8"/>
+        <!-- legs (animated via JS) -->
+        <line id="leg1" x1="36" y1="49" x2="30" y2="60" stroke="#a07840" stroke-width="4" stroke-linecap="round"/>
+        <line id="leg2" x1="43" y1="50" x2="49" y2="60" stroke="#a07840" stroke-width="4" stroke-linecap="round"/>
+        <line id="leg3" x1="52" y1="49" x2="46" y2="60" stroke="#a07840" stroke-width="4" stroke-linecap="round"/>
+        <line id="leg4" x1="58" y1="50" x2="64" y2="60" stroke="#a07840" stroke-width="4" stroke-linecap="round"/>
+      </svg>
     </div>
   </div>
 
