@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>天気ダッシュボード</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-inner">
+        <span class="logo">☁ Weather</span>
+        <span id="currentDate" class="date"></span>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Location bar -->
+      <div class="location-bar">
+        <input id="cityInput" class="city-input" type="text" placeholder="都市名を入力 (例: Tokyo)" value="Tokyo" />
+        <button id="searchBtn" class="search-btn">検索</button>
+      </div>
+
+      <!-- Loading / Error state -->
+      <div id="loading" class="state-box">
+        <div class="spinner"></div>
+        <p>データを取得中…</p>
+      </div>
+      <div id="errorBox" class="state-box hidden">
+        <p id="errorMsg">エラーが発生しました</p>
+      </div>
+
+      <!-- Main card -->
+      <div id="dashboard" class="dashboard hidden">
+        <div class="hero-card">
+          <div class="hero-left">
+            <div class="city-name" id="cityName">--</div>
+            <div class="weather-icon" id="weatherIcon">🌤</div>
+            <div class="weather-desc" id="weatherDesc">--</div>
+          </div>
+          <div class="hero-right">
+            <div class="temp-main" id="tempMain">--°</div>
+            <div class="temp-range">
+              <span class="temp-label">最高</span>
+              <span id="tempMax" class="temp-high">--°</span>
+              <span class="temp-label">最低</span>
+              <span id="tempMin" class="temp-low">--°</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats row -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-icon">💧</div>
+            <div class="stat-value" id="humidity">--%</div>
+            <div class="stat-label">湿度</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🌬</div>
+            <div class="stat-value" id="windSpeed">-- km/h</div>
+            <div class="stat-label">風速</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🌧</div>
+            <div class="stat-value" id="precipitation">-- mm</div>
+            <div class="stat-label">降水量</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">👁</div>
+            <div class="stat-value" id="visibility">-- km</div>
+            <div class="stat-label">視程</div>
+          </div>
+        </div>
+
+        <!-- Hourly forecast -->
+        <div class="section-title">今日の時間別予報</div>
+        <div class="hourly-scroll">
+          <div id="hourlyList" class="hourly-list"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
